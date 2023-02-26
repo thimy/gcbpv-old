@@ -12,7 +12,23 @@ class EventDashboard < Administrate::BaseDashboard
     name: Field::String,
     start_date: Field::DateTime,
     end_date: Field::DateTime,
-    content: Field::Text,
+    content: Field::SimpleMarkdown.with_options({
+      safe_links_only: true,
+      filter_html: true,
+      with_toc_data: true,
+      hard_wrap: true,
+      link_attributes: { rel: 'follow' },
+      autolink: true,
+      tables: true,
+      no_intra_emphasis: true,
+      strikethrough: true,
+      highlight: true,
+      space_after_headers: true,
+      easymde_options: {
+        spell_checker: false,
+        hide_icons: %w[guide heading]
+      }
+    }),
     address_first: Field::String,
     address_second: Field::String,
     city: Field::String,

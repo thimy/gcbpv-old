@@ -1,5 +1,5 @@
 :root {
-  --global-padding: 2rem;
+  --global-padding: var(--spacing-8);
   --brand: #ae9d7c;
   --content-width: 180ch;
   --gap: var(--spacing-6);

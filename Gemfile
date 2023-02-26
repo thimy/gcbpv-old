@@ -77,5 +77,7 @@ end
 gem "administrate"
 gem "devise"
 gem "devise-i18n"
+gem "rails-i18n"
 gem "view_component"
 gem "simple_form"
+gem "administrate-field-simple_markdown"
