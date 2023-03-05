@@ -1,0 +1,9 @@
+<% content_for(:page_title, @instrument.name) %>
+
+<%= render Global::HeroComponent.new(title: @instrument.name) %>
+
+<section class="section">
+  <div class="wrapper wrapper--text">
+    <div class="text-container"><%= markdown(@instrument.description) %></div>
+  </div>
+</section>

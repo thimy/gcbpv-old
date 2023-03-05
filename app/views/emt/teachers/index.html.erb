@@ -1,0 +1,12 @@
+<% content_for(:page_title, "Les enseignants") %>
+<% content_for(:page_class, "teachers") %>
+
+<%= render Global::HeroComponent.new(title: "Les enseignants") %>
+
+<section class="section">
+  <div class="wrapper">
+    <% @teachers.each do |teacher| %>
+      <%= link_to teacher.name, emt_teacher_path(teacher.id) %>
+    <% end %>
+  </div>
+</section>

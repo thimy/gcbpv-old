@@ -1,0 +1,9 @@
+<% content_for(:page_title, @workshop.name) %>
+
+<%= render Global::HeroComponent.new(title: @workshop.name) %>
+
+<section class="section">
+  <div class="wrapper wrapper--text">
+    <div class="text-container"><%= markdown(@workshop.description) %></div>
+  </div>
+</section>

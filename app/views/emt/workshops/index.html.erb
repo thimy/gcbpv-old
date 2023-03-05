@@ -1,0 +1,12 @@
+<% content_for(:page_title, "Les ateliers") %>
+<% content_for(:page_class, "workshops") %>
+
+<%= render Global::HeroComponent.new(title: "Les ateliers") %>
+
+<section class="section">
+  <div class="wrapper">
+    <% @workshops.each do |workshop| %>
+      <%= link_to workshop.name, emt_workshop_path(workshop.id) %>
+    <% end %>
+  </div>
+</section>

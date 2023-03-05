@@ -4,10 +4,15 @@
   </div>
   <nav class="nav">
     <ul class="nav__links">
-      <li class="nav__item">École de musique traditionnelle</li>
+      <li class="nav__item">
+        <%= link_to "École de musique traditionnelle", emt_path %>
+      </li>
       <li class="nav__item">La Bogue d’Or</li>
       <li class="nav__item">
         <%= link_to "Événements", events_path  %>
+      </li>
+      <li class="nav__item">
+        <%= link_to "À propos", groupement_path %>
       </li>
     </ul>
     <ul class="nav__actions">

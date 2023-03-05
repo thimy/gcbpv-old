@@ -1,7 +1,20 @@
 Rails.application.routes.draw do
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  # Defines the root path route ("/")
+  root "public#index"
+  
   resources :posts
   resources :events
 
+  get "/emt", to: "emt#index"
+  namespace :emt do
+    resources :workshops
+    resources :teachers
+    resources :instruments
+  end
+
+  get "/groupement", to: "groupement#index"
   get "/events", to: "events#index"
   get "/events/:id", to: "events#show"
 
@@ -10,14 +23,14 @@ Rails.application.routes.draw do
   end
   
   namespace :admin do
-    resources :posts
     root to: "posts#index"
 
+    resources :posts
+    resources :categories
     resources :events
+    resources :teachers
+    resources :instruments
+    resources :instrument_classes
+    resources :workshops
   end
-  root "public#index"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 end

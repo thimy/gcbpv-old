@@ -1,0 +1,9 @@
+<% content_for(:page_title, @teacher.name) %>
+
+<%= render Global::HeroComponent.new(title: @teacher.name) %>
+
+<section class="section">
+  <div class="wrapper wrapper--text">
+    <div class="text-container"><%= markdown(@teacher.description) %></div>
+  </div>
+</section>

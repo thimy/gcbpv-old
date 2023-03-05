@@ -1,0 +1,2 @@
+module Emt::WorkshopsHelper
+end

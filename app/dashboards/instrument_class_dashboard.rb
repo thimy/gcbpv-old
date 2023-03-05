@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class EventDashboard < Administrate::BaseDashboard
+class InstrumentClassDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,31 +9,12 @@ class EventDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    address_first: Field::String,
-    address_second: Field::String,
+    instrument: Field::BelongsTo,
+    teacher: Field::BelongsTo,
     city: Field::String,
-    content: Field::SimpleMarkdown.with_options({
-      safe_links_only: true,
-      filter_html: true,
-      with_toc_data: true,
-      hard_wrap: true,
-      link_attributes: { rel: 'follow' },
-      autolink: true,
-      tables: true,
-      no_intra_emphasis: true,
-      strikethrough: true,
-      highlight: true,
-      space_after_headers: true,
-      easymde_options: {
-        spell_checker: false,
-        hide_icons: %w[guide heading]
-      }
-    }),
-    end_date: Field::DateTime,
-    name: Field::String,
-    posts: Field::HasMany,
-    start_date: Field::DateTime,
-    street: Field::String,
+    class_day: Field::String,
+    start_time: Field::Time,
+    end_time: Field::Time,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -45,8 +26,8 @@ class EventDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    address_first
-    address_second
+    instrument
+    teacher
     city
   ].freeze
 
@@ -54,14 +35,12 @@ class EventDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    address_first
-    address_second
+    instrument
+    teacher
     city
-    content
-    end_date
-    name
-    start_date
-    street
+    class_day
+    start_time
+    end_time
     created_at
     updated_at
   ].freeze
@@ -70,14 +49,12 @@ class EventDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    address_first
-    address_second
+    instrument
+    teacher
     city
-    content
-    end_date
-    name
-    start_date
-    street
+    class_day
+    start_time
+    end_time
   ].freeze
 
   # COLLECTION_FILTERS
@@ -92,10 +69,10 @@ class EventDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how events are displayed
+  # Overwrite this method to customize how instrument classes are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(event)
-    event.name
-  end
+  # def display_resource(instrument_class)
+  #   "InstrumentClass ##{instrument_class.id}"
+  # end
 end

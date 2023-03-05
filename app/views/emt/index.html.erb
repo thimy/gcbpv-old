@@ -1,0 +1,19 @@
+<% content_for(:page_title, "L’école de Musique Traditionnelle") %>
+<% content_for(:page_class, "emt") %>
+
+<%= render Global::HeroComponent.new(title: "L’école de Musique Traditionnelle") %>
+
+<section class="section">
+  <div class="wrapper">
+    <h2 class="h2">La musique traditionnelle</h2>
+    <p>En Bretagne, la musique s’est principalement partagée au travers des générations par transmission orale. </p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrapper">
+    <h3 class="h3"><%= link_to "Les instruments enseignés", emt_instruments_path %></h3>
+    <h3 class="h3">Les ateliers</h3>
+    <h3 class="h3"><%= link_to "Les enseignants", emt_teachers_path %></h3>
+    <h3 class="h3">Les tarifs</h3>
+  </div>
+</section>

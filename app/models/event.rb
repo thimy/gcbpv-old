@@ -4,4 +4,6 @@ class Event < ApplicationRecord
   validates :city, presence: true
   
   validates_comparison_of :end_date, greater_than_or_equal_to: :start_date
+
+  has_many :posts
 end

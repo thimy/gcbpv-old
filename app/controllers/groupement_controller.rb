@@ -1,0 +1,2 @@
+class GroupementController < ApplicationController
+end
