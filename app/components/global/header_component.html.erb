@@ -6,6 +6,14 @@
     <ul class="nav__links">
       <li class="nav__item">
         <%= link_to "École de musique traditionnelle", emt_path %>
+        <ul class="nav__sub-links">
+          <li class="nav__sub-item">
+            <%= link_to "Les instruments", emt_instruments_path %>
+          </li>
+          <li class="nav__sub-item">
+            <%= link_to "Les ateliers", emt_workshops_path %>
+          </li>
+        </ul>
       </li>
       <li class="nav__item">La Bogue d’Or</li>
       <li class="nav__item">
@@ -16,9 +24,13 @@
       </li>
     </ul>
     <ul class="nav__actions">
+      <% if user_signed_in? %>
+        <li class="nav__item"> 
+          <div>Bienvenue <%= current_user.email %></div>
+        </li>
+        <% end %>
       <li class="nav__item">
         <% if user_signed_in? %> 
-          <div>Bienvenue <%= current_user.email %></div> 
           <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "button" %> 
         <% else %>
           <%= link_to "Se connecter", new_user_session_path, class: "button" %> 

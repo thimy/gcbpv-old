@@ -14,4 +14,5 @@ input.button {
   padding: var(--spacing-2) var(--spacing-5);
   text-decoration: none;
   text-transform: uppercase;
+  white-space: nowrap;
 }
