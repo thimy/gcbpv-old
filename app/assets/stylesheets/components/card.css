@@ -1,9 +1,23 @@
+.card-list {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card-list li {
+  display: flex;
+}
+
 .card {
   background: linear-gradient(to right, var(--blue-50), var(--purple-50));
   border-radius: var(--border-radius);
   color: var(--white);
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   gap: var(--gap);
   padding: var(--global-padding);
   text-decoration: none;

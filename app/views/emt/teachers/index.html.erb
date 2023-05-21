@@ -5,8 +5,11 @@
 
 <section class="section">
   <div class="wrapper">
-    <% @teachers.each do |teacher| %>
-      <%= link_to teacher.name, emt_teacher_path(teacher.id) %>
-    <% end %>
+    <ul class="card-list teacher-list">
+      <% @teachers.each do |teacher| %>
+        <li>
+          <%= render Global::CardComponent.new(title: teacher.name, url: emt_teacher_path(teacher.id), tags: teacher.instruments) %>
+        </li>
+      <% end %>
   </div>
 </section>

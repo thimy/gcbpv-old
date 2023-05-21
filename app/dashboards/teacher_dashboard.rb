@@ -30,6 +30,7 @@ class TeacherDashboard < Administrate::BaseDashboard
     instruments: Field::HasMany,
     name: Field::String,
     picture: Field::String,
+    status: Field::Select.with_options(collection: ["active", "inactive", "hidden"]),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -54,6 +55,7 @@ class TeacherDashboard < Administrate::BaseDashboard
     instruments
     name
     picture
+    status
     created_at
     updated_at
   ].freeze
@@ -66,6 +68,7 @@ class TeacherDashboard < Administrate::BaseDashboard
     description
     instruments
     picture
+    status
   ].freeze
 
   # COLLECTION_FILTERS

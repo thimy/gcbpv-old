@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   get "/groupement", to: "groupement#index"
   get "/events", to: "events#index"
+  get "/bogue", to: "events#bogue"
   get "/events/:id", to: "events#show"
 
   devise_for :users do

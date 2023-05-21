@@ -13,11 +13,18 @@
           <li class="nav__sub-item">
             <%= link_to "Les ateliers", emt_workshops_path %>
           </li>
+          <li class="nav__sub-item">
+            <%= link_to "Les professeurs", emt_teachers_path %>
+          </li>
         </ul>
       </li>
-      <li class="nav__item">La Bogue d’Or</li>
       <li class="nav__item">
         <%= link_to "Événements", events_path  %>
+        <ul class="nav__sub-links">
+          <li class="nav__sub-item">
+            <%= link_to "La Bogue d’Or", bogue_path %>
+          </li>
+        </ul>
       </li>
       <li class="nav__item">
         <%= link_to "À propos", groupement_path %>
