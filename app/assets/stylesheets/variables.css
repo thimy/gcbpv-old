@@ -12,6 +12,8 @@
   --title-font-family: "Crimson Pro";
   --title-font-weight: 300;
 
+  --bg-color: var(--white);
+
   --border-radius-small: var(--spacing-1);
   --border-radius: var(--spacing-4);
   --border-radius-large: var(--spacing-6);

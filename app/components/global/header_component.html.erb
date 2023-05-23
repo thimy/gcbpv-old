@@ -5,6 +5,9 @@
   <nav class="nav">
     <ul class="nav__links">
       <li class="nav__item">
+        <%= link_to "Le groupement", groupement_path %>
+      </li>
+      <li class="nav__item">
         <%= link_to "École de musique traditionnelle", emt_path %>
         <ul class="nav__sub-links">
           <li class="nav__sub-item">
@@ -27,7 +30,12 @@
         </ul>
       </li>
       <li class="nav__item">
-        <%= link_to "À propos", groupement_path %>
+        <%= link_to "Le centre de ressources", resources_path %>
+        <ul class="nav__sub-links">
+          <li class="nav__sub-item">
+            <%= link_to "Éditions", resources_editions_path %>
+          </li>
+        </ul>
       </li>
     </ul>
     <ul class="nav__actions">
