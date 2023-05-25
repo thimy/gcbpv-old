@@ -36,5 +36,6 @@ Rails.application.routes.draw do
     resources :instruments
     resources :instrument_classes
     resources :workshops
+    resources :editions
   end
 end

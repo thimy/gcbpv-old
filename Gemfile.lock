@@ -76,6 +76,11 @@ GEM
       kaminari (>= 1.0)
       sassc-rails (~> 2.1)
       selectize-rails (~> 0.6)
+    administrate-field-active_storage (0.4.2)
+      administrate (>= 0.2.2)
+      rails (>= 7.0)
+    administrate-field-image (1.2.0)
+      administrate (>= 0.2.0.rc1)
     administrate-field-simple_markdown (0.7.0)
       administrate (< 1.0.0)
       rack (~> 2.0, >= 2.0.8)
@@ -117,6 +122,9 @@ GEM
       activesupport (>= 5.0)
     i18n (1.13.0)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.2)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     io-console (0.6.0)
     irb (1.6.4)
       reline (>= 0.3.0)
@@ -152,6 +160,7 @@ GEM
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
+    mini_magick (4.12.0)
     mini_mime (1.1.2)
     minitest (5.18.0)
     msgpack (1.7.1)
@@ -214,6 +223,8 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.2.5)
+    ruby-vips (2.1.4)
+      ffi (~> 1.12)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -277,6 +288,8 @@ PLATFORMS
 
 DEPENDENCIES
   administrate
+  administrate-field-active_storage
+  administrate-field-image
   administrate-field-simple_markdown
   bootsnap
   capybara
@@ -284,6 +297,7 @@ DEPENDENCIES
   debug
   devise
   devise-i18n
+  image_processing
   jbuilder
   jsbundling-rails
   pg (~> 1.1)

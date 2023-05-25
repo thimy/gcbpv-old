@@ -3,5 +3,6 @@ class ResourcesController < ApplicationController
   end
 
   def editions
+    @editions = Edition.all
   end
 end
