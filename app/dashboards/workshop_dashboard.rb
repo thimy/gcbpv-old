@@ -75,7 +75,7 @@ class WorkshopDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how workshops are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(workshop)
-  #   "Workshop ##{workshop.id}"
-  # end
+  def display_resource(workshop)
+    workshop.name
+  end
 end

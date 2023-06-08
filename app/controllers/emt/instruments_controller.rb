@@ -6,7 +6,11 @@ class Emt::InstrumentsController < ApplicationController
   end
 
   def show
+    @sessions = Session.joins("INNER JOIN instrument_classes ON instrument_class_id = instrument_classes.instrument_id")
   end
+
+# SELECT * from sessions INNER JOIN instrument_classes ON instrument_class_id = instrument_classes.instrument_id;
+# sessions.joins(instrument_classes)
 
   private
     # Use callbacks to share common setup or constraints between actions.

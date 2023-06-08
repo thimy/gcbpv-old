@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  instrument_class: one
+  city: one
+  start_time: 2023-05-26 17:35:10
+  end_time: 2023-05-26 17:35:10
+
+two:
+  instrument_class: two
+  city: two
+  start_time: 2023-05-26 17:35:10
+  end_time: 2023-05-26 17:35:10

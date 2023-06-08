@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_year: 1
+  instrument_class: one
+  workshop: one
+  plan: one
+
+two:
+  start_year: 1
+  instrument_class: two
+  workshop: two
+  plan: two

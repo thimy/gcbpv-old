@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class InstrumentClassDashboard < Administrate::BaseDashboard
+class SessionDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,12 +9,11 @@ class InstrumentClassDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    instrument: Field::BelongsTo,
-    teacher: Field::BelongsTo,
-    city: Field::String,
-    class_day: Field::String,
-    start_time: Field::Time,
+    city: Field::BelongsTo,
+    day: Field::Select.with_options(collection: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]),
     end_time: Field::Time,
+    instrument_class: Field::BelongsTo,
+    start_time: Field::Time,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -26,19 +25,18 @@ class InstrumentClassDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    instrument
-    teacher
+    instrument_class
     city
+    day
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    instrument
-    teacher
+    instrument_class
     city
-    class_day
+    day
     start_time
     end_time
     created_at
@@ -49,10 +47,9 @@ class InstrumentClassDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    instrument
-    teacher
+    instrument_class
     city
-    class_day
+    day
     start_time
     end_time
   ].freeze
@@ -69,10 +66,10 @@ class InstrumentClassDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how instrument classes are displayed
+  # Overwrite this method to customize how sessions are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(instrument_class)
-    "#{instrument_class.instrument.name} avec #{instrument_class.teacher.name}"
+  def display_resource(session)
+    "#{session.instrument_class.instrument.name} avec #{session.instrument_class.teacher.name} à #{session.city.name}"
   end
 end

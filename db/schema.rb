@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_23_230821) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_26_154400) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -45,6 +45,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_23_230821) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -285,6 +291,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_23_230821) do
     t.index ["name"], name: "motor_tags_name_unique_index", unique: true
   end
 
+  create_table "plans", force: :cascade do |t|
+    t.string "name"
+    t.decimal "class_price"
+    t.decimal "workshop_price"
+    t.decimal "obc_markup"
+    t.decimal "outbounds_markup"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -295,6 +311,30 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_23_230821) do
     t.bigint "category_id"
     t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["event_id"], name: "index_posts_on_event_id"
+  end
+
+  create_table "seasons", force: :cascade do |t|
+    t.integer "start_year"
+    t.bigint "instrument_class_id", null: false
+    t.bigint "workshop_id", null: false
+    t.bigint "plan_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["instrument_class_id"], name: "index_seasons_on_instrument_class_id"
+    t.index ["plan_id"], name: "index_seasons_on_plan_id"
+    t.index ["workshop_id"], name: "index_seasons_on_workshop_id"
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.bigint "instrument_class_id", null: false
+    t.bigint "city_id", null: false
+    t.time "start_time"
+    t.time "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "day"
+    t.index ["city_id"], name: "index_sessions_on_city_id"
+    t.index ["instrument_class_id"], name: "index_sessions_on_instrument_class_id"
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -342,5 +382,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_23_230821) do
   add_foreign_key "motor_taggable_tags", "motor_tags", column: "tag_id"
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "events"
+  add_foreign_key "seasons", "instrument_classes"
+  add_foreign_key "seasons", "plans"
+  add_foreign_key "seasons", "workshops"
+  add_foreign_key "sessions", "cities"
+  add_foreign_key "sessions", "instrument_classes"
   add_foreign_key "workshops", "teachers"
 end

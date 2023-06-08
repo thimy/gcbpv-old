@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  class_price: 9.99
+  worksho_pricep: 9.99
+  obc_markup: 9.99
+  outbounds_markup: 9.99
+
+two:
+  name: MyString
+  class_price: 9.99
+  worksho_pricep: 9.99
+  obc_markup: 9.99
+  outbounds_markup: 9.99

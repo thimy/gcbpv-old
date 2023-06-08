@@ -69,7 +69,7 @@ class EditionDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how editions are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(edition)
-  #   "Edition ##{edition.id}"
-  # end
+  def display_resource(edition)
+    edition.name
+  end
 end

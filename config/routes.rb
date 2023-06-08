@@ -29,13 +29,17 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "posts#index"
 
-    resources :posts
-    resources :categories
-    resources :events
     resources :teachers
     resources :instruments
     resources :instrument_classes
+    resources :sessions
     resources :workshops
+    resources :cities
+
+    resources :events
+    resources :posts
+    resources :categories
     resources :editions
+
   end
 end
