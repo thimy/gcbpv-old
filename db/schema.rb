@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_26_154400) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_11_092619) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -83,10 +83,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_26_154400) do
     t.bigint "teacher_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "city"
     t.string "class_day"
     t.time "start_time"
     t.time "end_time"
+    t.bigint "city_id"
+    t.index ["city_id"], name: "index_instrument_classes_on_city_id"
     t.index ["instrument_id"], name: "index_instrument_classes_on_instrument_id"
     t.index ["teacher_id"], name: "index_instrument_classes_on_teacher_id"
   end
@@ -373,6 +374,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_26_154400) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "instrument_classes", "cities"
   add_foreign_key "instrument_classes", "instruments"
   add_foreign_key "instrument_classes", "teachers"
   add_foreign_key "motor_alert_locks", "motor_alerts", column: "alert_id"

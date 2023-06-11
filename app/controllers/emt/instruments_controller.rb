@@ -6,11 +6,9 @@ class Emt::InstrumentsController < ApplicationController
   end
 
   def show
-    @sessions = Session.joins("INNER JOIN instrument_classes ON instrument_class_id = instrument_classes.instrument_id")
+    @sessions = Session.joins(:instrument_class).where(instrument_class: {instrument: @instrument})
+    @sessions_by_city_and_day = @sessions.order(:start_time).group_by{ |session| [session.city, session.day] }
   end
-
-# SELECT * from sessions INNER JOIN instrument_classes ON instrument_class_id = instrument_classes.instrument_id;
-# sessions.joins(instrument_classes)
 
   private
     # Use callbacks to share common setup or constraints between actions.

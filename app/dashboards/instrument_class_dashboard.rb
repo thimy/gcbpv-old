@@ -11,7 +11,7 @@ class InstrumentClassDashboard < Administrate::BaseDashboard
     id: Field::Number,
     instrument: Field::BelongsTo,
     teacher: Field::BelongsTo,
-    city: Field::String,
+    city: Field::BelongsTo,
     class_day: Field::String,
     start_time: Field::Time,
     end_time: Field::Time,
