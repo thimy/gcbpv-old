@@ -62,8 +62,9 @@
   margin: 0;
   padding: var(--item-padding);
   position: absolute;
-  width: calc(100% - var(--item-padding) * 2);
+  min-width: calc(100% - var(--item-padding) * 2);
   top: 100%;
+  white-space: nowrap;
 }
 
 .nav__item:hover .nav__sub-links {

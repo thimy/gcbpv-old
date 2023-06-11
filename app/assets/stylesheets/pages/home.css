@@ -11,6 +11,10 @@
   padding-block: var(--spacing-10);
 }
 
+.hero__column {
+  background-position: center center no-repeat;
+}
+
 .hero__column:not(:first-child) {
   border-radius: var(--border-radius) 0 0 var(--border-radius);
   color: var(--white);
@@ -31,7 +35,8 @@
 }
 
 .hero__column:not(:first-child)::after {
-  background-image: linear-gradient(transparent, var(--gray-90));
+  background-image: linear-gradient(transparent, var(--gray-90));``
+  background-size: cover;
   bottom: 0;
   content: "";
   display: block;
@@ -43,17 +48,17 @@
 }
 
 .hero__column--events {
-  background: url("images/events.jpg") center center no-repeat;
+  background-image: url("images/events.jpg");
   grid-area: "events";
 }
 
 .hero__column--emt {
-  background: url("images/emt.jpg") center center no-repeat;
+  background-image: url("images/emt.jpg");
   grid-area: "emt";
 }
 
 .hero__column--resources {
-  background: url("images/resources.jpg") center center no-repeat;
+  background-image: url("images/resources.jpg");
   grid-area: "resources";
 }
 
