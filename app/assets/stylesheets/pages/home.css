@@ -11,6 +11,17 @@
   padding-block: var(--spacing-10);
 }
 
+.home .hero__title {
+  font-family: var(--title-font-family);
+  font-weight: 200;
+}
+
+.home .hero__title mark {
+  background: 0;
+  font-family: var(--title-font-family);
+  font-weight: 600;
+}
+
 .hero__column {
   background-position: center center no-repeat;
 }

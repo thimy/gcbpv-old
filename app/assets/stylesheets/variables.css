@@ -6,11 +6,13 @@
 
   --text-color: var(--black);
 
-  --text-font-family: "Inter";
-  --text-font-weight: 300;
+  --text-font-family: "Montserrat";
+  --text-font-weight: 400;
 
-  --title-font-family: "Crimson Pro";
+  --title-font-family: "Montserrat Alternates";
   --title-font-weight: 300;
+
+  --brand-font-family: "Outfit";
 
   --bg-color: var(--white);
 
