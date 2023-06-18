@@ -26,7 +26,10 @@
 
 .hero__title {
   font-size: 4rem;
+  font-weight: var(--title-font-weight);
   margin: 0;
+  padding-inline: var(--gap);
+  text-align: center;
 }
 
 .hero__extra {

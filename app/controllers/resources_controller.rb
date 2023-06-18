@@ -5,4 +5,8 @@ class ResourcesController < ApplicationController
   def editions
     @editions = Edition.all
   end
+
+  def edition
+    @edition = Edition.find(params[:id])
+  end
 end

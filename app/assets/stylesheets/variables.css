@@ -9,10 +9,8 @@
   --text-font-family: "Montserrat";
   --text-font-weight: 400;
 
-  --title-font-family: "Montserrat Alternates";
-  --title-font-weight: 300;
-
-  --brand-font-family: "Outfit";
+  --title-font-family: "Outfit";
+  --title-font-weight: 500;
 
   --bg-color: var(--white);
 

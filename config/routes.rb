@@ -20,7 +20,8 @@ Rails.application.routes.draw do
   get "/events/:id", to: "events#show"
 
   get "/centre-de-ressources", to: "resources#index", as: "resources"
-  get "/centre-de-ressources/editions", to: "resources#editions", as: "resources_editions"
+  get "/centre-de-ressources/editions", to: "resources#editions", as: "editions"
+  get "/centre-de-ressources/editions/:id", to: "resources#edition", as: "edition"
 
   devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy'

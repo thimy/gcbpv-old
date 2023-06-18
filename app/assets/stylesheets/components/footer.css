@@ -30,7 +30,7 @@
 .footer__list-title {
   font-family: var(--text-font-family);
   font-size: 0.875rem;
-  font-weight: var(--text-font-weight);
+  font-weight: 600;
   letter-spacing: 0.2rem;
   margin-block: var(--spacing-2);
   text-transform: uppercase;

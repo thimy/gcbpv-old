@@ -7,8 +7,10 @@
     "main emt"
     "main resources";
   grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   min-height: 30rem;
   padding-block: var(--spacing-10);
+  position: relative;
 }
 
 .home .hero__title {
@@ -18,12 +20,34 @@
 
 .home .hero__title mark {
   background: 0;
-  font-family: var(--title-font-family);
   font-weight: 600;
 }
 
+.hero__main {
+  align-items: center;
+  display: flex;
+  grid-row: 1 / -1;
+  grid-column: 1 / 1;
+  justify-content: center;
+  z-index: 5;
+}
+
 .hero__column {
-  background-position: center center no-repeat;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 110%;
+  text-decoration: none;
+  transition: all ease-out 0.2s;
+  z-index: 5;
+}
+
+.hero__column:hover {
+  background-size: 120%;
+  margin-left: -2rem;
+}
+
+.hero__column:hover .hero__column-title {
+  font-weight: 500;
 }
 
 .hero__column:not(:first-child) {
@@ -46,7 +70,7 @@
 }
 
 .hero__column:not(:first-child)::after {
-  background-image: linear-gradient(transparent, var(--gray-90));``
+  background-image: linear-gradient(transparent, var(--gray-90));
   background-size: cover;
   bottom: 0;
   content: "";
@@ -65,12 +89,40 @@
 
 .hero__column--emt {
   background-image: url("images/emt.jpg");
-  grid-area: "emt";
 }
 
 .hero__column--resources {
   background-image: url("images/resources.jpg");
-  grid-area: "resources";
+}
+
+.hero__background {
+  background-color: var(--black);
+  background-position: center center;
+  background-size: cover;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: all linear 0.2s;
+  z-index: 0;
+}
+
+.hero__column:hover ~ .hero__background {
+  opacity: 1;
+}
+
+.hero__column--events:hover ~ .hero__background {
+  background-image: url("images/events.jpg");
+}
+
+.hero__column--emt:hover ~ .hero__background {
+  background-image: url("images/emt.jpg");
+}
+
+.hero__column--resources:hover ~ .hero__background {
+  background-image: url("images/resources.jpg");
 }
 
 .section__header {
