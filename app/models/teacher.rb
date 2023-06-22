@@ -4,7 +4,6 @@ class Teacher < ApplicationRecord
   has_many :workshops
 
   validates :name, presence: true
-  validates :description, presence: true
 
   VALID_STATUSES = ["active", "inactive", "hidden"]
   validates :status, inclusion: { in: VALID_STATUSES }
