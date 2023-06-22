@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  last_name: MyString
+  first_name: MyString
+  birthyear: 2023-06-22 22:24:04
+  payor: one
+
+two:
+  last_name: MyString
+  first_name: MyString
+  birthyear: 2023-06-22 22:24:04
+  payor: two

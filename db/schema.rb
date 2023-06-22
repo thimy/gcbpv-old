@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_22_113119) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_22_203035) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -97,6 +97,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_22_113119) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "payors", force: :cascade do |t|
+    t.string "last_name"
+    t.string "first_name"
+    t.string "street_address"
+    t.string "postcode"
+    t.string "city"
+    t.string "phone"
+    t.string "mail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "plans", force: :cascade do |t|
     t.string "name"
     t.decimal "class_price"
@@ -141,6 +153,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_22_113119) do
     t.string "day"
     t.index ["city_id"], name: "index_sessions_on_city_id"
     t.index ["instrument_class_id"], name: "index_sessions_on_instrument_class_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "last_name"
+    t.string "first_name"
+    t.datetime "birthyear"
+    t.bigint "payor_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "mail", default: "f"
+    t.index ["payor_id"], name: "index_students_on_payor_id"
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -189,5 +212,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_22_113119) do
   add_foreign_key "seasons", "workshops"
   add_foreign_key "sessions", "cities"
   add_foreign_key "sessions", "instrument_classes"
+  add_foreign_key "students", "payors"
   add_foreign_key "workshops", "teachers"
 end
