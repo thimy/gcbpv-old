@@ -86,3 +86,4 @@ gem "administrate-field-active_storage"
 gem "image_processing"
 
 gem "pundit", "~> 2.3"
+gem "avo"
