@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_22_203035) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_22_210525) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -166,6 +166,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_22_203035) do
     t.index ["payor_id"], name: "index_students_on_payor_id"
   end
 
+  create_table "subscriptions", force: :cascade do |t|
+    t.boolean "is_paid"
+    t.bigint "season_id", null: false
+    t.bigint "students_id", null: false
+    t.decimal "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["season_id"], name: "index_subscriptions_on_season_id"
+    t.index ["students_id"], name: "index_subscriptions_on_students_id"
+  end
+
   create_table "teachers", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -213,5 +224,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_22_203035) do
   add_foreign_key "sessions", "cities"
   add_foreign_key "sessions", "instrument_classes"
   add_foreign_key "students", "payors"
+  add_foreign_key "subscriptions", "seasons"
+  add_foreign_key "subscriptions", "students", column: "students_id"
   add_foreign_key "workshops", "teachers"
 end
