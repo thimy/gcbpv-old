@@ -2,6 +2,7 @@
 Avo.configure do |config|
   ## == Routing ==
   config.root_path = '/avo'
+  config.app_name = -> { "GCBPV" }
   # used only when you have custom `map` configuration in your config.ru
   # config.prefix_path = "/internal"
 
@@ -72,21 +73,21 @@ Avo.configure do |config|
   # config.buttons_on_form_footers = true
   # config.field_wrapper_layout = true
 
-  ## == Branding ==
-  # config.branding = {
-  #   colors: {
-  #     background: "248 246 242",
-  #     100 => "#CEE7F8",
-  #     400 => "#399EE5",
-  #     500 => "#0886DE",
-  #     600 => "#066BB2",
-  #   },
-  #   chart_colors: ["#0B8AE2", "#34C683", "#2AB1EE", "#34C6A8"],
-  #   logo: "/avo-assets/logo.png",
-  #   logomark: "/avo-assets/logomark.png",
-  #   placeholder: "/avo-assets/placeholder.svg",
-  #   favicon: "/avo-assets/favicon.ico"
-  # }
+  # == Branding ==
+  config.branding = {
+    colors: {
+      background: "248 246 242",
+      100 => "#d0e0f5",
+      400 => "#10294a",
+      500 => "#205293",
+      600 => "#4383d6",
+    },
+    chart_colors: ["#0B8AE2", "#34C683", "#2AB1EE", "#34C6A8"],
+    logo: "/assets/logo.svg",
+    logomark: "/assets/chestnut.svg",
+    placeholder: "/avo-assets/placeholder.svg",
+    favicon: "/avo-assets/favicon.ico"
+  }
 
   ## == Breadcrumbs ==
   # config.display_breadcrumbs = true

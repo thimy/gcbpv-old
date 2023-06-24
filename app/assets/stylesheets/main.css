@@ -41,3 +41,22 @@ h4 {
   font-family: var(--title-font-family);
   font-weight: 300;
 }
+
+a {
+  border-radius: var(--border-radius-small);
+  color: var(--text-color);
+  padding: var(--spacing-2) var(--spacing-3);
+  text-decoration: none;
+  text-decoration-color: var(--link-hover-color);
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: 0;
+  text-underline-offset: var(--spacing-1);
+  transition: all linear 0.1s;
+}
+
+a:hover {
+  /* background-color: var(--gray-20); */
+  text-decoration-line: underline;
+  text-decoration-thickness: var(--spacing-2);
+  text-underline-offset: var(--spacing-1-minus);
+}

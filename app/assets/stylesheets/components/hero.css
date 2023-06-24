@@ -25,7 +25,7 @@
 }
 
 .hero__title {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: var(--title-font-weight);
   margin: 0;
   padding-inline: var(--gap);

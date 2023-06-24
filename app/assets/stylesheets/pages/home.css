@@ -20,7 +20,16 @@
 
 .home .hero__title mark {
   background: 0;
-  font-weight: 600;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--link-hover-color);
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: var(--spacing-4);
+  text-underline-offset: var(--spacing-2-minus);
+}
+
+.home .hero__title span {
+  font-feature-settings: "swsh" 1;
 }
 
 .hero__main {
@@ -36,7 +45,7 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 110%;
-  text-decoration: none;
+  text-decoration-line: none;
   transition: all ease-out 0.2s;
   z-index: 5;
 }
@@ -44,10 +53,7 @@
 .hero__column:hover {
   background-size: 120%;
   margin-left: -2rem;
-}
-
-.hero__column:hover .hero__column-title {
-  font-weight: 500;
+  transition: all ease-in 0.2s margin-left ease-in 0.8s ;
 }
 
 .hero__column:not(:first-child) {
@@ -96,21 +102,21 @@
 }
 
 .hero__background {
-  background-color: var(--black);
   background-position: center center;
   background-size: cover;
   bottom: 0;
+  filter: sepia(1);
   left: 0;
   opacity: 0;
   position: absolute;
   right: 0;
-  top: 0;
-  transition: all linear 0.2s;
+  top: -6.5rem;
+  transition: opacity ease-in-out 0.8s;
   z-index: 0;
 }
 
 .hero__column:hover ~ .hero__background {
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .hero__column--events:hover ~ .hero__background {
