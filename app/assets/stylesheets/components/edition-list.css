@@ -8,8 +8,9 @@
 }
 
 .edition__list-item {
+  background: var(--bg-color);
   border-radius: var(--border-radius);
-  box-shadow: 0 0 5em 0 var(--gray-30);
+  box-shadow: var(--box-shadow-default);
   display: flex;
   flex-direction: row;
   overflow: hidden;
