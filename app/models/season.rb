@@ -7,6 +7,6 @@ class Season < ApplicationRecord
   validates :start_year, presence: true
 
   def name
-    "#{star_year}-#{start_year + 1}"
+    "#{start_year}-#{start_year + 1}"
   end
 end

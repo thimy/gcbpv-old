@@ -8,8 +8,11 @@ class SeasonResource < Avo::BaseResource
   field :id, as: :id
   # Fields generated from the model
   field :start_year, as: :number
-  field :instrument_class, as: :belongs_to
-  field :workshop, as: :belongs_to
-  field :plan, as: :belongs_to
+  # field :instrument_class_id,
+  #   as: :tags,
+  #   suggestions: -> { InstrumentClass.suggestions }
+  field :instrument_class_id, as: :number
+  field :workshop_id, as: :number
+  field :plan_id, as: :number
   # add fields here
 end

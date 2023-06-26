@@ -9,8 +9,5 @@ class InstrumentClassResource < Avo::BaseResource
   # Fields generated from the model
   field :instrument, as: :belongs_to
   field :teacher, as: :belongs_to
-  field :class_day, as: :select, enum: ::InstrumentClass::CLASS_DAYS
-  field :start_time, as: :time
-  field :end_time, as: :time
   # add fields here
 end
