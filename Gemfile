@@ -74,6 +74,7 @@ group :test do
   gem "webdrivers"
 end
 
+gem "acts-as-taggable-on", "~> 9.0"
 gem "administrate"
 gem "devise"
 gem "devise-i18n"
