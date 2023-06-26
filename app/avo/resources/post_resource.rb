@@ -1,5 +1,5 @@
 class PostResource < Avo::BaseResource
-  self.title = :id
+  self.title = :title
   self.includes = []
   # self.search_query = -> do
   #   scope.ransack(id_eq: params[:q], m: "or").result(distinct: false)
@@ -9,9 +9,7 @@ class PostResource < Avo::BaseResource
   # Fields generated from the model
   field :title, as: :text
   field :content, as: :textarea
-  field :status, as: :text
-  field :event_id, as: :number
-  field :category_id, as: :number
+  field :status, as: :select, enum: ::Post::VALID_STATUSES
   field :event, as: :belongs_to
   field :category, as: :belongs_to
   # add fields here

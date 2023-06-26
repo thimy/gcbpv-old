@@ -8,12 +8,11 @@ class WorkshopResource < Avo::BaseResource
   field :id, as: :id
   # Fields generated from the model
   field :name, as: :text
-  field :teacher_id, as: :number
-  field :description, as: :textarea
-  field :workshop_day, as: :text
-  field :start_time, as: :date_time
-  field :end_time, as: :date_time
-  field :location, as: :text
   field :teacher, as: :belongs_to
+  field :description, as: :textarea
+  field :location, as: :text
+  field :workshop_day, as: :text
+  field :start_time, as: :time
+  field :end_time, as: :time
   # add fields here
 end

@@ -9,7 +9,7 @@ class StudentResource < Avo::BaseResource
   # Fields generated from the model
   field :last_name, as: :text
   field :first_name, as: :text
-  field :birthyear, as: :date_time
+  field :birthyear, as: :date
   field :payor, as: :belongs_to
   # add fields here
 end
