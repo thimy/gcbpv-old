@@ -9,7 +9,7 @@ class SubscriptionResource < Avo::BaseResource
   # Fields generated from the model
   field :is_paid, as: :boolean
   field :season, as: :belongs_to
-  field :students, as: :belongs_to
+  field :student, as: :belongs_to
   field :amount, as: :number
   # add fields here
 end

@@ -1,5 +1,5 @@
 class StudentResource < Avo::BaseResource
-  self.title = "#{:first_name} #{:last_name}"
+  self.title = :full_name
   self.includes = []
   # self.search_query = -> do
   #   scope.ransack(id_eq: params[:q], m: "or").result(distinct: false)
