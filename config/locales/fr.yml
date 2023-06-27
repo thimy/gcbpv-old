@@ -1,0 +1,42 @@
+fr:
+  time:
+    am: am
+    formats:
+      default: "%d %B %Y %Hh %Mmin %Ss"
+      long: "%d/%m/%Y %H:%M"
+      short: "%d %b %Hh%M"
+      hour_details: "%Hh%M"
+  activerecord:
+    models:
+      instrument_class:
+        one: "Classe"
+        other: "Classes"
+      teacher:
+        one: "Professeur"
+        other: "Professeurs"
+      user:
+        one: "Utilisateur"
+        other: "Utilisateurs"
+    attributes:
+      instrument_class:
+        class_day: "Jour du cours"
+        city: "Ville"
+        # Tu définies ici le nom des champs vus seuls (dans un object InstrumentClasse).
+      teacher:
+        name: "Nom"
+        description: "Descriptif"
+        picture: "Avatar"
+        status: "Statut"
+        instrument_class:
+          class_day: "Journée du cours"
+        # Tu définies ici le nom des champs vus quand ils sont nestés dans un teacher.
+      user:
+        first_name: "Prénom"
+        last_name: "Nom"
+        role: "Rôle"
+        admin: "Admin"
+        active: "Actif"
+        invitation_sent_at: "Invitation envoyée le"
+        invitation_accepted_at: "Invitation acceptée le"
+        phone: "Téléphone"
+        address: "Adresse"
