@@ -2,6 +2,7 @@ class InstrumentClass < ApplicationRecord
   # association table to link teachers to many instruments
   belongs_to :instrument
   belongs_to :teacher
+  has_and_belongs_to_many :season
 
   CLASS_DAYS = [
     { value: "monday", label: "actif" },

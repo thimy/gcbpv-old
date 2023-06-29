@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_26_194113) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_29_105445) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -117,6 +117,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_26_194113) do
     t.decimal "outbounds_markup"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "awakening_price", default: "0.0"
+    t.decimal "kids_discovery_price", default: "0.0"
+    t.decimal "discovery_price", default: "0.0"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -133,14 +136,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_26_194113) do
 
   create_table "seasons", force: :cascade do |t|
     t.integer "start_year"
-    t.bigint "instrument_class_id", null: false
-    t.bigint "workshop_id", null: false
     t.bigint "plan_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["instrument_class_id"], name: "index_seasons_on_instrument_class_id"
     t.index ["plan_id"], name: "index_seasons_on_plan_id"
-    t.index ["workshop_id"], name: "index_seasons_on_workshop_id"
+  end
+
+  create_table "seasons_instrument_classes", force: :cascade do |t|
+    t.bigint "season_id"
+    t.bigint "instrument_class_id"
+    t.index ["instrument_class_id"], name: "index_seasons_instrument_classes_on_instrument_class_id"
+    t.index ["season_id"], name: "index_seasons_instrument_classes_on_season_id"
+  end
+
+  create_table "seasons_workshops", force: :cascade do |t|
+    t.bigint "season_id"
+    t.bigint "workshop_id"
+    t.index ["season_id"], name: "index_seasons_workshops_on_season_id"
+    t.index ["workshop_id"], name: "index_seasons_workshops_on_workshop_id"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -240,6 +253,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_26_194113) do
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "workshop_type"
     t.index ["teacher_id"], name: "index_workshops_on_teacher_id"
   end
 
@@ -249,9 +263,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_26_194113) do
   add_foreign_key "instrument_classes", "teachers"
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "events"
-  add_foreign_key "seasons", "instrument_classes"
   add_foreign_key "seasons", "plans"
-  add_foreign_key "seasons", "workshops"
   add_foreign_key "sessions", "cities"
   add_foreign_key "sessions", "instrument_classes"
   add_foreign_key "students", "payors"

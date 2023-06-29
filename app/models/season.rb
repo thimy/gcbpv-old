@@ -1,8 +1,8 @@
 class Season < ApplicationRecord
   # A season describes one school term
-  has_many :instrument_class
-  has_many :workshop
-  has_one :plan
+  has_and_belongs_to_many :instrument_class
+  has_and_belongs_to_many :workshop
+  belongs_to :plan
 
   validates :start_year, presence: true
 
