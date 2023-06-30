@@ -30,7 +30,7 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
   
-  namespace :admin do
+  namespace :secretariat do
     root to: "posts#index"
 
     resources :teachers
