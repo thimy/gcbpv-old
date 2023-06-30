@@ -1,5 +1,5 @@
 <% if !flash.empty? %>
-  <div class="callout callout--error">
+  <div class="callout" data-notice="error">
     <% flash.each do |name, msg| %>
       <% if msg.class == Array %>
         <% msg.each do |message| %>

@@ -3,7 +3,7 @@
   background-color: var(--bg-color-transparent);
   display: flex;
   gap: var(--gap);
-  padding: var(--spacing-6) var(--global-padding);
+  padding: var(--spacing-4) var(--global-padding);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -16,7 +16,7 @@
   margin: 0;
 }
 
-.main-header__title img {
+.main-header__title svg {
   height: 100%;
   width: 40px;
 }
@@ -42,9 +42,14 @@
   position: relative;
 }
 
-.nav a {
+.nav__item {
   border-radius: var(--border-radius-small);
-  padding: var(--spacing-2) var(--spacing-3);
+  display: inline-flex;
+  position: relative;
+}
+
+.nav__item a {
+  padding: var(--spacing-4) var(--spacing-4);
   text-decoration: none;
   text-decoration-color: var(--link-hover-color);
   text-decoration-skip-ink: none;
@@ -53,17 +58,16 @@
   transition: all linear 0.2s;
 }
 
-.nav a:hover {
+.nav__item a:hover {
   /* background-color: var(--gray-20); */
   text-decoration-line: underline;
   text-decoration-thickness: var(--spacing-2);
   text-underline-offset: var(--spacing-1-minus);
 }
 
-.nav__item {
-  border-radius: var(--border-radius-small);
-  display: inline-flex;
-  position: relative;
+.nav__item a.button,
+.nav__item a.button:hover {
+  text-decoration: none;
 }
 
 .nav__sub-links {
@@ -105,4 +109,5 @@
 
 .nav__sub-item a {
   flex-grow: 1;
+  padding: var(--spacing-2) var(--spacing-3);
 }

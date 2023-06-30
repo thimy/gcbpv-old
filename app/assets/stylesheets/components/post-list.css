@@ -9,7 +9,7 @@
 }
 
 .post-list__item {
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-small);
   box-shadow: var(--box-shadow-default);
   display: flex;
   flex-direction: row;
@@ -22,7 +22,7 @@
 }
 
 .post__content {
-  background: var(--white);
+  background: var(--bg-color);
   flex-grow: 1;
   padding: var(--global-padding);
 }

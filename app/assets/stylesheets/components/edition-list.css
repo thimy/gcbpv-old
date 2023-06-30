@@ -9,7 +9,7 @@
 
 .edition__list-item {
   background: var(--bg-color);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-medium);
   box-shadow: var(--box-shadow-default);
   display: flex;
   flex-direction: row;

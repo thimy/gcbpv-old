@@ -1,7 +1,7 @@
 <header class="main-header">
   <div class="main-header__title">
     <%= link_to root_path do %>
-      <%= image_tag("chestnut.svg", { height: 30 }) %>
+      <%= inline_svg "chestnut"  %>
     <% end %>
   </div>
   <nav class="nav">
@@ -46,7 +46,7 @@
           <div>Bienvenue <%= current_user.email %></div>
         </li>
         <% end %>
-      <li class="nav__item">
+      <li>
         <% if user_signed_in? %> 
           <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "button" %> 
         <% else %>

@@ -58,7 +58,7 @@
 }
 
 .hero__column:not(:first-child) {
-  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-radius: var(--border-radius-medium) 0 0 var(--border-radius-medium);
   color: var(--white);
   flex-basis: var(--spacing-40);
   flex-shrink: 0;

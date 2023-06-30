@@ -12,8 +12,12 @@
 
   <body class="<%= content_for(:page_class) || "" %>">
     <%= render(Global::HeaderComponent.new(title: "GCBPV", current_user: current_user)) %>
-    <p class="banner notice"><%= notice %></p> 
-    <p class="banner alert"><%= alert %></p> 
+    <% if notice.present? %>
+      <p class="full callout" data-notice="warning"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+      <p class="full callout" data-notice="error"><%= alert %></p>
+    <% end %>
     <main class="main-content">
       <%= yield %>
     </main>
