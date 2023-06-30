@@ -13,7 +13,7 @@ class EditionDashboard < Administrate::BaseDashboard
     format: Field::String,
     name: Field::String,
     price: Field::String.with_options(searchable: false),
-    image: Field::ActiveStorage,
+    image: Field::Image,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

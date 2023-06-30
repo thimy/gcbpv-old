@@ -1,4 +1,7 @@
 fr:
+  active: "actif"
+  inactive: "inactif"
+  hidden: "caché"
   time:
     am: am
     formats:
@@ -8,15 +11,48 @@ fr:
       hour_details: "%Hh%M"
   activerecord:
     models:
+      category:
+        one: "Catégorie"
+        other: "Catégories"
+      city:
+        one: "Ville"
+        other: "Villes"
+      edition:
+        one: "Édition"
+        other: "Éditions"
+      event:
+        one: "Événement"
+        other: "Événements"
       instrument_class:
-        one: "Classe"
-        other: "Classes"
+        one: "Cours"
+        other: "Cours"
+      payor:
+        one: "Responsable légal"
+        other: "Responsables légaux"
+      post:
+        one: "Article"
+        other: "Articles"
+      season:
+        one: "Année scolaire"
+        other: "Années scolaires"
+      session:
+        one: "Cours par ville"
+        other: "Cours par ville"
+      student:
+        one: "Élève"
+        other: "Élèves"
+      subscription:
+        one: "Inscription"
+        other: "Inscriptions"
       teacher:
         one: "Professeur"
         other: "Professeurs"
       user:
         one: "Utilisateur"
         other: "Utilisateurs"
+      workshop:
+        one: "Atelier"
+        other: "Ateliers"
     attributes:
       instrument_class:
         class_day: "Jour du cours"
@@ -30,6 +66,20 @@ fr:
         instrument_class:
           class_day: "Journée du cours"
         # Tu définies ici le nom des champs vus quand ils sont nestés dans un teacher.
+      plan:
+        name: "Nom"
+        class_price: "Prix du cours"
+        workshop_price: "Prix de l’atelier"
+        awakening_price: "Prix de l’éveil musical"
+        kids_discovery_price: "Prix de l’atelier découverte enfants"
+        discovery_price: "Prix de l’atelier découverte adultes"
+        obc_markup: "Majoration OBC"
+        outbounds_markup: "Majoration hors-agglo"
+      season:
+        start_year: "Année de début"
+        plan_id: "Formule"
+        instrument_class: "Cours"
+        workshop: "Ateliers"
       user:
         first_name: "Prénom"
         last_name: "Nom"
@@ -40,3 +90,4 @@ fr:
         invitation_accepted_at: "Invitation acceptée le"
         phone: "Téléphone"
         address: "Adresse"
+      

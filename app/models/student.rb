@@ -3,11 +3,11 @@ class Student < ApplicationRecord
   belongs_to :payor
   
   SUBSCRIPTION_STATUSES = [
-    { value: "inquiry", label: "Demande d’information" },
-    { value: "subscribed", label: "Inscrit" },
-    { value: "partial_payment", label: "Règlement partiel" },
-    { value: "paid", label: "Règlement complet" },
-    { value: "reimbursement", label: "À rembourser" }
+    "Demande d’information",
+    "Inscrit",
+    "Règlement partiel",
+    "Règlement complet",
+    "À rembourser"
   ]
 
   validates :last_name, presence: true

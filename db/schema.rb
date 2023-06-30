@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_29_190207) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_30_152241) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -90,6 +90,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_29_190207) do
     t.index ["teacher_id"], name: "index_instrument_classes_on_teacher_id"
   end
 
+  create_table "instrument_classes_seasons", id: false, force: :cascade do |t|
+    t.bigint "season_id", null: false
+    t.bigint "instrument_class_id", null: false
+    t.index ["instrument_class_id"], name: "index_instrument_classes_seasons_on_instrument_class_id"
+    t.index ["season_id"], name: "index_instrument_classes_seasons_on_season_id"
+  end
+
   create_table "instruments", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -142,16 +149,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_29_190207) do
     t.index ["plan_id"], name: "index_seasons_on_plan_id"
   end
 
-  create_table "seasons_instrument_classes", force: :cascade do |t|
-    t.bigint "season_id"
-    t.bigint "instrument_class_id"
-    t.index ["instrument_class_id"], name: "index_seasons_instrument_classes_on_instrument_class_id"
-    t.index ["season_id"], name: "index_seasons_instrument_classes_on_season_id"
-  end
-
-  create_table "seasons_workshops", force: :cascade do |t|
-    t.bigint "season_id"
-    t.bigint "workshop_id"
+  create_table "seasons_workshops", id: false, force: :cascade do |t|
+    t.bigint "workshop_id", null: false
+    t.bigint "season_id", null: false
     t.index ["season_id"], name: "index_seasons_workshops_on_season_id"
     t.index ["workshop_id"], name: "index_seasons_workshops_on_workshop_id"
   end

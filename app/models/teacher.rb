@@ -8,9 +8,9 @@ class Teacher < ApplicationRecord
   validates :description, presence: true
 
   VALID_STATUSES = [
-    { value: "active", label: "actif" },
-    { value: "inactive", label: "inactif" },
-    { value: "hidden", label: "caché" }
+    "actif",
+    "inactif",
+    "caché"
   ]
   validates :status, inclusion: { in: VALID_STATUSES }
 

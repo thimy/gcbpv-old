@@ -31,13 +31,17 @@ Rails.application.routes.draw do
   end
   
   namespace :secretariat do
-    root to: "posts#index"
+    root to: "students#index"
 
+    resources :students
+    resources :subscriptions
     resources :teachers
     resources :instruments
     resources :instrument_classes
     resources :sessions
     resources :workshops
+    resources :seasons
+    resources :plans
     resources :cities
 
     resources :events
