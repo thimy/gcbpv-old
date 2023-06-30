@@ -5,12 +5,11 @@ class SessionResource < Avo::BaseResource
   #   scope.ransack(id_eq: params[:q], m: "or").result(distinct: false)
   # end
 
-  field :id, as: :id
   # Fields generated from the model
-  field :instrument_class, as: :belongs_to
-  field :city, as: :belongs_to
-  field :day, as: :text
-  field :start_time, as: :time
-  field :end_time, as: :time
+  field :instrument_class, as: :belongs_to, name: "Cours"
+  field :city, as: :belongs_to, name: "Ville"
+  field :day, as: :text, name: "Jour"
+  field :start_time, as: :time, name: "Heure de début"
+  field :end_time, as: :time, name: "Heure de fin"
   # add fields here
 end

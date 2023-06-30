@@ -5,12 +5,11 @@ class EditionResource < Avo::BaseResource
   #   scope.ransack(id_eq: params[:q], m: "or").result(distinct: false)
   # end
 
-  field :id, as: :id
   # Fields generated from the model
-  field :name, as: :text
-  field :description, as: :textarea
+  field :name, as: :text, name: "Nom", link_to_resource: true
+  field :description, as: :markdown
   field :format, as: :text
-  field :price, as: :number
+  field :price, as: :number, name: "Prix"
   field :image, as: :file
   # add fields here
 end

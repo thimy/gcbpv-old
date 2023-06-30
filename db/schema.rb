@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_29_105445) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_29_190207) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -176,16 +176,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_29_105445) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "mail", default: "f"
+    t.string "status"
     t.index ["payor_id"], name: "index_students_on_payor_id"
   end
 
   create_table "subscriptions", force: :cascade do |t|
-    t.boolean "is_paid"
     t.bigint "season_id", null: false
     t.bigint "student_id", null: false
     t.decimal "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "amount_paid"
     t.index ["season_id"], name: "index_subscriptions_on_season_id"
     t.index ["student_id"], name: "index_subscriptions_on_student_id"
   end

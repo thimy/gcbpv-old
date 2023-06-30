@@ -5,11 +5,11 @@ class InstrumentClass < ApplicationRecord
   has_and_belongs_to_many :season
 
   CLASS_DAYS = [
-    { value: "monday", label: "actif" },
-    { value: "tuesday", label: "inactif" },
-    { value: "wednesday", label: "caché" },
-    { value: "thursday", label: "caché" },
-    { value: "friday", label: "caché" }
+    { value: "monday", label: "lundi" },
+    { value: "tuesday", label: "mardi" },
+    { value: "wednesday", label: "mercredi" },
+    { value: "thursday", label: "jeudi" },
+    { value: "friday", label: "vendredi" }
   ]
   validates :class_day, presence: true, inclusion: { in: CLASS_DAYS }
   validates :start_time, presence: true

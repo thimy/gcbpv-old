@@ -2,11 +2,7 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true, length: { minimum: 10 }
 
-  VALID_STATUSES = [
-    { value: "private", label: "privé" },
-    { value: "public", label: "public" }, 
-    { value: "archived", label: "archivé" }
-  ]
+  VALID_STATUSES = ["privé", "public", "archivé"]
   validates :status, presence: true, inclusion: { in: VALID_STATUSES }
 
   belongs_to :event, optional: true
@@ -17,6 +13,6 @@ class Post < ApplicationRecord
   end
 
   def archived?
-    status == "archived"
+    status == "archivé"
   end
 end

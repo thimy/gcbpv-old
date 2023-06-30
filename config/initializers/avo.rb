@@ -2,7 +2,7 @@
 Avo.configure do |config|
   ## == Routing ==
   config.root_path = '/avo'
-  config.app_name = -> { "GCBPV" }
+  config.app_name = -> { "Retour vers le site" }
   # used only when you have custom `map` configuration in your config.ru
   # config.prefix_path = "/internal"
 
@@ -25,6 +25,7 @@ Avo.configure do |config|
 
   Avo.configure do |config|
     config.current_user_method = :current_user
+    config.locale = :fr
   end
 
   ## == Authorization ==
@@ -95,20 +96,37 @@ Avo.configure do |config|
   #   add_breadcrumb "Home", '/avo'
   # end
 
-  ## == Menus ==
-  # config.main_menu = -> {
-  #   section "Dashboards", icon: "dashboards" do
-  #     all_dashboards
-  #   end
+  # == Menus ==
+  config.main_menu = -> {
+    # section "Dashboards", icon: "dashboards" do
+    #   all_dashboards
+    # end
 
-  #   section "Resources", icon: "resources" do
-  #     all_resources
-  #   end
+    section "Resources", icon: "resources" do
+      group "EMT", collapse: true do
+        resource :students, label: "Élèves"
+        resource :payors, label: "Payeurs"
+        resource :subscriptions, label: "Inscriptions"
+        resource :teachers, label: "Professeurs"
+        resource :instruments, label: "Instruments"
+        resource :instrument_classes, label: "Cours"
+        resource :sessions, label: "Sessions de cours"
+        resource :workshops, label: "Ateliers"
+        resource :seasons, label: "Années scolaires"
+        resource :plans, label: "Formules"
+      end
+      group "Publications", collapse: true do
+        resource :posts, label: "Articles"
+        resource :events, label: "Événements"
+        resource :editions, label: "Éditions"
+        resource :categories, label: "Catégories"
+      end
+    end
 
-  #   section "Tools", icon: "tools" do
-  #     all_tools
-  #   end
-  # }
+    # section "Tools", icon: "tools" do
+    #   all_tools
+    # end
+  }
   # config.profile_menu = -> {
   #   link "Profile", path: "/avo/profile", icon: "user-circle"
   # }

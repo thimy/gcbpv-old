@@ -7,4 +7,8 @@ class Payor < ApplicationRecord
   validates :street_address, presence: true
   validates :postcode, presence: true
   validates :city, presence: true
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end

@@ -5,15 +5,14 @@ class PlanResource < Avo::BaseResource
   #   scope.ransack(id_eq: params[:q], m: "or").result(distinct: false)
   # end
 
-  field :id, as: :id, link_to_resource: true
   # Fields generated from the model
-  field :name, as: :text
-  field :class_price, as: :number
-  field :workshop_price, as: :number
-  field :awakening_price, as: :number
-  field :kids_discovery_price, as: :number
-  field :discovery_price, as: :number
-  field :obc_markup, as: :number
-  field :outbounds_markup, as: :number
+  field :name, as: :text, name: "Nom", link_to_resource: true
+  field :class_price, as: :number, name: "Cours"
+  field :workshop_price, as: :number, name: "Atelier seul"
+  field :awakening_price, as: :number, name: "Éveil musical"
+  field :kids_discovery_price, as: :number, name: "Atelier découverte enfants"
+  field :discovery_price, as: :number, name: "Atelier découverte adultes"
+  field :obc_markup, as: :number, name: "Majoration OBC"
+  field :outbounds_markup, as: :number, name: "Majoration hors-agglo"
   # add fields here
 end
