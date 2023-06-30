@@ -42,18 +42,17 @@ class TeacherDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    description
-    instrument_classes
-    instruments
+    name
+    status
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
+    name
     description
     instruments
-    name
     picture
     status
     created_at

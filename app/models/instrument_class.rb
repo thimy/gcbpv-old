@@ -2,18 +2,19 @@ class InstrumentClass < ApplicationRecord
   # association table to link teachers to many instruments
   belongs_to :instrument
   belongs_to :teacher
+  has_and_belongs_to_many :subscription
   has_and_belongs_to_many :season
 
   CLASS_DAYS = [
-    { value: "monday", label: "lundi" },
-    { value: "tuesday", label: "mardi" },
-    { value: "wednesday", label: "mercredi" },
-    { value: "thursday", label: "jeudi" },
-    { value: "friday", label: "vendredi" }
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday"
   ]
   validates :class_day, presence: true, inclusion: { in: CLASS_DAYS }
   validates :start_time, presence: true
-  validates :end_time, presence: TeacherResource
+  validates :end_time, presence: true
 
   def name
     "#{instrument.name} avec #{teacher.name}"

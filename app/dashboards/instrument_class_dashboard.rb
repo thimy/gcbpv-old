@@ -11,7 +11,6 @@ class InstrumentClassDashboard < Administrate::BaseDashboard
     id: Field::Number,
     instrument: Field::BelongsTo,
     teacher: Field::BelongsTo,
-    city: Field::BelongsTo,
     class_day: Field::String,
     start_time: Field::Time,
     end_time: Field::Time,
@@ -28,7 +27,6 @@ class InstrumentClassDashboard < Administrate::BaseDashboard
     id
     instrument
     teacher
-    city
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -37,7 +35,6 @@ class InstrumentClassDashboard < Administrate::BaseDashboard
     id
     instrument
     teacher
-    city
     class_day
     start_time
     end_time
@@ -51,7 +48,6 @@ class InstrumentClassDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     instrument
     teacher
-    city
     class_day
     start_time
     end_time

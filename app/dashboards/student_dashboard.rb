@@ -11,9 +11,8 @@ class StudentDashboard < Administrate::BaseDashboard
     id: Field::Number,
     first_name: Field::String,
     last_name: Field::String,
-    status: Field::Select.with_options(collection: Student::SUBSCRIPTION_STATUSES),
     mail: Field::String,
-    birthyear: Field::DateTime,
+    birthyear: Field::Number,
     payor: Field::BelongsTo,
     subscription: Field::HasMany,
     created_at: Field::DateTime,
@@ -29,7 +28,7 @@ class StudentDashboard < Administrate::BaseDashboard
     id
     first_name
     last_name
-    status
+    mail
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -38,7 +37,6 @@ class StudentDashboard < Administrate::BaseDashboard
     id
     first_name
     last_name
-    status
     mail
     birthyear
     payor
@@ -50,12 +48,11 @@ class StudentDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    birthyear
     first_name
     last_name
     mail
+    birthyear
     payor
-    status
   ].freeze
 
   # COLLECTION_FILTERS
